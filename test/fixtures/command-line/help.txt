@@ -1,5 +1,5 @@
 
-  Usage: webpagetest [options] [command]
+Usage: webpagetest [options] [command]
 
 
   Commands:
@@ -24,6 +24,7 @@
     response [options] <id>           get response body for text resources
     waterfall [options] <id>          get the waterfall PNG image
     screenshot [options] <id>         get the fully loaded page screenshot in JPG format (PNG if in full resolution)
+    filmstrip [options] <id>          get the zip archive of filmstrip images
     video [options] <tests>           create a video from <tests> (comma separated test ids)
     player <id>                       get a html5 player for a video <id>
     listen [options] [hostname:port]  start webpagetest-api proxy server on <hostname>:<port> [hostname:7791]

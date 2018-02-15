@@ -324,6 +324,16 @@ describe('Dry Run', function() {
       });
     });
 
+    it('gets a filmstrip request', function(done) {
+      wpt.getFilmstrip('120816_V2_2', {
+        dryRun: true
+      }, function (err, data) {
+        if (err) return done(err);
+        assert.equal(data.url, wptServer + 'video/downloadFrames.php?test=120816_V2_2&run=1&cached=0');
+        done();
+      });
+    });
+
     // alias
 
     it('gets a custom test request using aliases', function(done) {

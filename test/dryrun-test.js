@@ -239,15 +239,7 @@ describe('Dry Run', function() {
         done();
       });
     });
-
-    it('gets test info request', function(done) {
-      wpt.getTestInfo('120816_V2_2', {dryRun: true}, function (err, data) {
-        if (err) return done(err);
-        assert.equal(data.url, wptServer + 'getgzip.php?test=120816_V2_2&file=testinfo.json');
-        done();
-      });
-    });
-
+    
     it('gets history request', function(done) {
       wpt.getHistory(2, {dryRun: true}, function (err, data) {
         if (err) return done(err);

@@ -18,7 +18,6 @@ Usage: webpagetest [options] [command]
     netlog [options] <id>             get the Chrome Developer Tools Net log data (if available) from test
     chrometrace [options] <id>        get the Chrome Trace data (if available) from test
     console [options] <id>            get the browser console log data (if available) from test
-    testinfo <id>                     get test request info/details
     history [days]                    get history of previously run tests
     googlecsi [options] <id>          get Google CSI data (Client Side Instrumentation)
     response [options] <id>           get response body for text resources

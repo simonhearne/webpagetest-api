@@ -66,7 +66,6 @@ $ webpagetest --help
 * **netlog** _[options] \<id\>_: get the Chrome Developer Tools Net log data (if available) from test
 * **chrometrace** _[options] \<id\>_: get the Chrome Trace data (if available) from test
 * **console** _[options] \<id\>_: get the browser console log data (if available) from test
-* **testinfo** _\<id\>_: get test request info/details
 * **history** _[days]_: get history of previously run tests
 * **googlecsi** _[options] \<id\>_: get Google CSI data (Client Side Instrumentation)
 * **response** _[options] \<id\>_: get response body for text resources
@@ -360,7 +359,6 @@ Methods and options (including the one letter shorthands) are the same when usin
 * `getNetLogData(id, options, callback)`
 * `getChromeTraceData(id, options, callback)`
 * `getConsoleLogData(id, options, callback)`
-* `getTestInfo(id, options, callback)`
 * `getHistory(days, options, callback)`
 * `getGoogleCsiData(id, options, callback)`
 * `getResponseBody(id, options, callback)`

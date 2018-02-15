@@ -71,6 +71,7 @@ $ webpagetest --help
 * **response** _[options] \<id\>_: get response body for text resources
 * **waterfall** _[options] \<id\>_: get the waterfall PNG image
 * **screenshot** _[options] \<id\>_: get the fully loaded page screenshot in JPG format (PNG if in full resolution)
+* **filmstrip** _[options] \<id\>_: get the zip archive of filmstrip images
 * **video** _[options] \<tests\>_: create a video from _\<tests\>_ (comma separated test ids)
 * **player** _\<id\>_: get a html5 player for a video _\<id\>_
 * **listen** _[options]_ _[port]_: start webpagetest-api server on port _[7791_]
@@ -162,7 +163,7 @@ _The default WPT server can also be specified via environment variable `WEBPAGET
 * **-S, --specs** _\<json_or_file\>_: set the specs for performance test suite
 * **-r, --reporter** _\<name\>_: set performance test suite reporter output: [dot]|spec|tap|xunit|list|progress|min|nyan|landing|json|doc|markdown|teamcity
 
-#### Run (works for **pagespeed**, **utilization**, **request**, **timeline**, **netlog**, **chrometrace**, **console**, **googlecsi**, **response**, **waterfall** and **screenshot** commands)
+#### Run (works for **pagespeed**, **utilization**, **request**, **timeline**, **netlog**, **chrometrace**, **console**, **googlecsi**, **response**, **waterfall**, **screenshot** and **filmstrip** commands)
 * **-r, --run** _\<number\>_: which run number on a multiple runs test [1]
 * **-c, --cached**: get the Repeat View (cached view) instead of default First View (primed cache)
 
@@ -364,6 +365,7 @@ Methods and options (including the one letter shorthands) are the same when usin
 * `getResponseBody(id, options, callback)`
 * `getWaterfallImage(id, options, callback)`
 * `getScreenshotImage(id, options, callback)`
+* `getFilmstrip(id, options, callback)`
 * `createVideo(tests, options, callback)`
 * `getEmbedVideoPlayer(id, options, callback)`
 * `listen(port, options, callback)`
@@ -488,7 +490,7 @@ wpt.runTest(script, (err, data) => {
 * **specs**: _String_, set the specs for performance test suite
 * **reporter**: _String_, set performance test suite reporter output: [dot]|spec|tap|xunit|list|progress|min|nyan|landing|json|doc|markdown|teamcity
 
-#### Run (works for `getPageSpeedData`, `getUtilizationData`, `getRequestData`, `getTimelineData`, `getNetLogData`, `getChromeTraceData`, `getConsoleLogData`, `getGoogleCsiData`, `getResponseBody`, `getWaterfallImage` and `getScreenshotImage` methods)
+#### Run (works for `getPageSpeedData`, `getUtilizationData`, `getRequestData`, `getTimelineData`, `getNetLogData`, `getChromeTraceData`, `getConsoleLogData`, `getGoogleCsiData`, `getResponseBody`, `getWaterfallImage`, `getScreenshotImage` and `getFilmstrip` methods)
 * **run**: _Number_, the test run number for multiple runs tests (default: 1, first test)
 * **repeatView**: _Boolean_, if `true` returns the repeat view (cached) data
 

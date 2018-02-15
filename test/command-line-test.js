@@ -232,15 +232,6 @@ describe('WebPageTest Command Line', function() {
     });
   });
 
-  it('gets a test info input returns the API url', function(done) {
-    exec(mock('testinfo 120816_V2_2'), function(err, data) {
-      if (err) return done(err);
-      data = JSON.parse(data);
-      assert.equal(data.url, wptServer + 'getgzip.php?test=120816_V2_2&file=testinfo.json');
-      done();
-    });
-  });
-
   it('gets a history input returns the API url', function(done) {
     exec(mock('history 2'), function(err, data) {
       if (err) return done(err);
@@ -308,8 +299,8 @@ describe('WebPageTest Command Line', function() {
   [
     '', 'status', 'results', 'locations', 'testers', 'test', 'cancel', 'har',
     'pagespeed', 'utilization', 'request', 'timeline', 'netlog', 'chrometrace',
-    'console', 'testinfo', 'history', 'googlecsi', 'response', 'waterfall',
-    'screenshot', 'video', 'player', 'listen', 'batch'
+    'console', 'history', 'googlecsi', 'response', 'waterfall',
+    'screenshot', 'filmstrip', 'video', 'player', 'listen', 'batch'
   ].forEach(function eachCmd(command) {
       it('gets a ' + command + ' help input and returns the help text', function(done) {
         exec(mock(command + ' --help'), function(err, data) {

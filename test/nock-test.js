@@ -185,14 +185,6 @@ describe('Example WebPageTest', function() {
       });
     });
 
-    it('gets test info request then returns the test info object', function(done) {
-      wpt.getTestInfo('120816_V2_2', function (err, data) {
-        if (err) return done(err);
-        assert.deepEqual(data, ResponseObjects.testInfo);
-        done();
-      });
-    });
-
     it('gets history request then returns the history object', function(done) {
       wpt.getHistory(2, function (err, data) {
         if (err) return done(err);

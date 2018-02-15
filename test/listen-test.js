@@ -237,15 +237,6 @@ describe('Local WebPageTest-API Proxy', function() {
       });
     });
 
-    it('gets test info GET request then returns the test info JSON', function(done) {
-      get('/testinfo/120816_V2_2', server, function (err, data) {
-        if (err) return done(err);
-        data = JSON.parse(data);
-        assert.deepEqual(data, ResponseObjects.testInfo);
-        done();
-      });
-    });
-
     it('gets history GET request then returns the history JSON', function(done) {
       get('/history/2', server, function (err, data) {
         if (err) return done(err);

@@ -239,15 +239,7 @@ describe('Dry Run', function() {
         done();
       });
     });
-
-    it('gets test info request', function(done) {
-      wpt.getTestInfo('120816_V2_2', {dryRun: true}, function (err, data) {
-        if (err) return done(err);
-        assert.equal(data.url, wptServer + 'getgzip.php?test=120816_V2_2&file=testinfo.json');
-        done();
-      });
-    });
-
+    
     it('gets history request', function(done) {
       wpt.getHistory(2, {dryRun: true}, function (err, data) {
         if (err) return done(err);
@@ -320,6 +312,16 @@ describe('Dry Run', function() {
       }, function (err, data) {
         if (err) return done(err);
         assert.equal(data.url, wptServer + 'getgzip.php?test=120816_V2_2&file=1_screen.png');
+        done();
+      });
+    });
+
+    it('gets a filmstrip request', function(done) {
+      wpt.getFilmstrip('120816_V2_2', {
+        dryRun: true
+      }, function (err, data) {
+        if (err) return done(err);
+        assert.equal(data.url, wptServer + 'video/downloadFrames.php?test=120816_V2_2&run=1&cached=0');
         done();
       });
     });

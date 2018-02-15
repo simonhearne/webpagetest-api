@@ -34,7 +34,6 @@ var output = function(data, exitStatus, preExit) {
 var formatData = function(err, data, info) {
   var dataStr,
       encoding = 'utf8';
-
   if (err) {
     data = {error: err};
   } else if (info) {
@@ -49,9 +48,9 @@ var formatData = function(err, data, info) {
 
   if (!(data instanceof Buffer)) {
     try {
-      dataStr = JSON.stringify(data, null, 2);
+      data = JSON.stringify(data, null, 2);
     } catch (ex) {
-      dataStr = JSON.stringify({
+      data = JSON.stringify({
         data: data.toString(),
         error: ex.message
       }, null, 2);
@@ -59,13 +58,13 @@ var formatData = function(err, data, info) {
   }
 
   if (file) {
-    fs.writeFile(file, dataStr, encoding, function writeFile(err) {
+    fs.writeFile(file, data, encoding, function writeFile(err) {
       if (err) {
         output(err.message, 1);
       }
     });
   } else {
-    output(dataStr, err ? 1 : 0);
+    output(data, err ? 1 : 0);
   }
 
   return data;
@@ -286,7 +285,7 @@ function execCommand() {
   }
 
   file = program.out;
-
+  
   wpt[command].apply(wpt, args);
 }
 
